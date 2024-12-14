@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>tours and travels management</title>
+<link rel="stylesheet" href="style.css" class="css">
+
+<script>
+  function updateVehicleDetails() {
+    var vehicleType = document.getElementById("vehicleType").value;
+    var vehicleDetails = document.getElementById("vehicleDetails");
+    var vehicleIncharge = document.getElementById("vehicleIncharge");
+    var inchargeDetails = document.getElementById("inchargeDetails");
+    var contactIncharge = document.getElementById("contactIncharge");
+
+    if (vehicleType === "car") {
+      vehicleDetails.value = "TN 60 T 1234";
+      vehicleIncharge.value = "Ashok";
+      inchargeDetails.value = "Car Driver";
+      contactIncharge.value = "6369293435";
+    } else if (vehicleType === "van") {
+      vehicleDetails.value = "TN 60 AA 0987";
+      vehicleIncharge.value = "Kirubakaran";
+      inchargeDetails.value = "Van Driver";
+      contactIncharge.value = "0987654321";
+    } else if (vehicleType === "bus") {
+      vehicleDetails.value = "TN 60 M 1234";
+      vehicleIncharge.value = "Ramesh";
+      inchargeDetails.value = "Bus Driver";
+      contactIncharge.value = "1234567890";
+    } else {
+      // Clear the fields if another option is selected
+      vehicleDetails.value = "";
+      vehicleIncharge.value = "";
+      inchargeDetails.value = "";
+      contactIncharge.value = "";
+    }
+  }
+</script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="images/logo design/imagelogoremovebg-preview.png" class="logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">home</a></li>
+                <li><a href="destination.html">destination</a></li>
+                <li><a href="booking.html">booking</a></li>
+                <li><a href="aboutus.html">about us</a></li>
+            </ul>
+        </div>
+        
+    </header>
+    <style class="form_design">
+      body {
+        background-color: rgb(174, 173, 173);
+      }
+      
+      h2 {
+        color: #333;
+        text-align: center;
+      }
+      
+      form {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+      }
+      
+      label {
+        font-weight: bold;
+        color: #555;
+      }
+      
+      input[type="text"],
+      input[type="date"],
+      input[type="number"],
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 15px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 10px;
+        font-size: 16px;
+      }
+      
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+      
+      /* Style for restaurant list box */
+      #restaurantSelect {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        background: url('restaurant_image.jpg') no-repeat right center;
+        background-size: 30px;
+      }
+    </style>
+    
+<div class="form_design"></div>
+<br>
+<h2>Travel Reservation Form</h2>
+
+<form id="reservationForm" action="submit.php" method="post">
+  <label for="id">ID:</label><br>
+  <input type="text" id="id" name="id"><br>
+
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name"><br>
+
+  <label for="pickupDate">Pick-up Date:</label><br>
+  <input type="date" id="pickupDate" name="pickupDate"><br>
+
+  <label for="dropDate">Drop Date:</label><br>
+  <input type="date" id="dropDate" name="dropDate"><br>
+
+  <label for="vehicleType">Vehicle Type:</label><br>
+  <select id="vehicleType" name="vehicleType" onchange="updateVehicleDetails()">
+    <option value="select" selected>Select Vehicle</option>
+    <option value="car">Car</option>
+    <option value="van">Van</option>
+    <option value="bus">Bus</option>
+  </select><br>
+
+  <label for="vehicleDetails">Vehicle Details:</label><br>
+  <textarea id="vehicleDetails" name="vehicleDetails" rows="3"></textarea><br>
+
+  <label for="vehicleIncharge">Vehicle Incharge:</label><br>
+  <textarea id="vehicleIncharge" name="vehicleIncharge" rows="3"></textarea><br>
+
+  <label for="inchargeDetails">Incharge Details:</label><br>
+  <textarea id="inchargeDetails" name="inchargeDetails" rows="3"></textarea><br>
+
+  <label for="contactIncharge">Contact Details of Incharge:</label><br>
+  <textarea id="contactIncharge" name="contactIncharge" rows="3"></textarea><br>
+
+  <label for="destinationRoute">Destination Route:</label><br>
+  <input type="text" id="destinationRoute" name="destinationRoute"><br>
+
+  <label for="adults">No of Adults:</label><br>
+  <input type="number" id="adults" name="adults"><br>
+
+  <label for="children">No of Children:</label><br>
+  <input type="number" id="children" name="children"><br>
+
+  <label for="rooms">No of Rooms:</label><br>
+  <input type="number" id="rooms" name="rooms"><br>
+
+  <label for="Hotel">Hotel:</label><br>
+  <input type="text" id="Hotel" name="Hotel"><br>
+
+  <label for="Hotel location">Hotel Location:</label><br>
+  <input type="text" id="HotelLocation" name="HotelLocation"><br>
+
+  <label for="HotelContact">Contact Detail of Hotel:</label><br>
+  <input type="text" id="HotelContact" name="HotelContact"><br>
+
+  <input type="submit" value="Confirm">
+
+</form>
+
+</body>
+</html>
